@@ -764,3 +764,142 @@ a {
     transform: none;
 }
 }
+
+/* ==========================
+   SMARTPHONE RESPONSIVE (Up to 480px)
+========================== */
+@media (max-width: 480px) {
+    /* Header & Navigation */
+    .header {
+        padding: 10px 4%;
+    }
+    
+    .nav-links {
+        gap: 10px;
+    }
+    
+    .nav-links a:not(.nav-btn) {
+        font-size: 12px;
+        padding-right: 8px;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 40px 5%;
+    }
+
+    .hero-text h1 {
+        font-size: 28px; /* Smaller title for small screens */
+    }
+
+    .hero-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+    /* About Section */
+    .about-section {
+        padding: 60px 5%;
+    }
+
+    .section-title {
+        font-size: 28px;
+    }
+
+    .about-stats {
+        flex-direction: column; /* Stack stats vertically */
+        gap: 20px;
+    }
+
+    /* Skills & Projects */
+    .skills-section, .projects-section {
+        padding: 60px 5%;
+    }
+
+    .skills-grid, .projects-grid {
+        grid-template-columns: 1fr; /* Single column layout */
+    }
+
+    /* Mentorship Section */
+    .mentorship-section {
+        padding: 60px 5%;
+    }
+
+    .membership-badge {
+        font-size: 12px;
+        padding: 8px 15px;
+    }
+
+    /* Contact Section */
+    .contact-section {
+        padding: 60px 5%;
+    }
+
+    .contact-wrapper {
+        gap: 30px;
+    }
+
+    .info-item p {
+        font-size: 16px;
+    }
+
+    /* Footer */
+    .footer {
+        padding: 40px 5% 20px;
+    }
+
+    .footer-container {
+        text-align: center;
+    }
+}
+
+/* --- Hamburger Menu Styles --- */
+.menu-icon {
+    display: none; /* Hidden on desktop */
+    font-size: 24px;
+    cursor: pointer;
+    color: #2d2d32;
+}
+
+@media (max-width: 768px) {
+    .menu-icon { display: block; }
+
+    .nav-links {
+        display: none; /* Hide standard links on mobile */
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        padding: 20px;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    }
+
+    .nav-links.active { display: flex; } /* Show when toggled */
+}
+
+/* --- Scroll to Top Button --- */
+#scrollToTopBtn {
+    display: none; /* Hidden by default */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #FF8C00;
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+#scrollToTopBtn:hover { background-color: #2d2d32; }

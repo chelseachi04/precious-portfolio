@@ -18,11 +18,19 @@
             <a href="index.html">PRECIOUS.</a>
         </div>
         <nav class="nav-links">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Services</a>
-            <a href="#contact" class="nav-btn">Contact</a>
+        <a href="#about" onclick="toggleMenu()">About</a>
+        <a href="#skills" onclick="toggleMenu()">Skills</a>
+        <a href="#projects" onclick="toggleMenu()">Services</a>
+        <a href="#contact" class="nav-btn" onclick="toggleMenu()">Contact</a>
         </nav>
+
+        <div class="menu-icon" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+</div>
+
+<button id="scrollToTopBtn" title="Go to top">
+    <i class="fas fa-arrow-up"></i>
+</button>
     </div>
 </header>
 
@@ -255,6 +263,30 @@
     </div>
 </footer>
 
+<script>
+    // Hamburger Menu Toggle
+function toggleMenu() {
+    const nav = document.getElementById("navLinks");
+    nav.classList.toggle("active");
+}
+
+// Scroll to Top Logic
+let mybutton = document.getElementById("scrollToTopBtn");
+
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+mybutton.onclick = function() {
+  window.scrollTo({top: 0, behavior: 'smooth'});
+}
+</script>
 
 </body>
 </html>
