@@ -24,12 +24,13 @@
         <a href="#contact" class="nav-btn" onclick="toggleMenu()">Contact</a>
         </nav>
 
-        <div class="menu-icon" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
+<div class="menu-icon" id="menuToggle" onclick="toggleMenu()">
+    <i class="fas fa-bars bar-icon"></i>
+    <i class="fas fa-times close-icon" style="display: none;"></i>
 </div>
 
 <button id="scrollToTopBtn" title="Go to top">
-    <i class="fas fa-arrow-up"></i>
+    Top
 </button>
     </div>
 </header>
@@ -264,27 +265,23 @@
 </footer>
 
 <script>
-    // Hamburger Menu Toggle
 function toggleMenu() {
     const nav = document.getElementById("navLinks");
+    const menuToggle = document.getElementById("menuToggle");
+    const barIcon = menuToggle.querySelector('.bar-icon');
+    const closeIcon = menuToggle.querySelector('.close-icon');
+
+    // Toggle the Nav Links
     nav.classList.toggle("active");
-}
 
-// Scroll to Top Logic
-let mybutton = document.getElementById("scrollToTopBtn");
-
-window.onscroll = function() {scrollFunction()};
-
-function scrollFunction() {
-  if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-    mybutton.style.display = "block";
-  } else {
-    mybutton.style.display = "none";
-  }
-}
-
-mybutton.onclick = function() {
-  window.scrollTo({top: 0, behavior: 'smooth'});
+    // Toggle the Icons
+    if (nav.classList.contains("active")) {
+        barIcon.style.display = "none";
+        closeIcon.style.display = "block";
+    } else {
+        barIcon.style.display = "block";
+        closeIcon.style.display = "none";
+    }
 }
 </script>
 
